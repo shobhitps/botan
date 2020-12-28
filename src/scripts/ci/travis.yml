@@ -26,6 +26,11 @@ jobs:
       env:
        - TARGET="shared"
 
+    - name: Linux amd64 (GCC)
+      arch: amd64
+      env:
+       - TARGET="shared"
+    
     - name: Linux arm32 cross (GCC)
       arch: arm64
       env:
