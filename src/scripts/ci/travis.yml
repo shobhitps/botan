@@ -5,22 +5,6 @@ compiler: gcc
 
 jobs:
   include:
-    - name: Linux s390x (GCC)
-      arch: s390x
-      env:
-       - TARGET="shared"
-
-    - name: Linux ppc64le (GCC)
-      arch: ppc64le
-      env:
-       - TARGET="shared"
-
-    - name: Linux ppc64le (Clang)
-      arch: ppc64le
-      compiler: clang
-      env:
-       - TARGET="shared"
-
     - name: Linux arm64 (GCC)
       arch: arm64
       env:
@@ -34,14 +18,9 @@ jobs:
     - name: Linux amd64 (GCC)
       arch: arm64-graviton2
       group: edge
-      virt: vm
+      virt: lxd
       env:
        - TARGET="shared"
-    
-    - name: Linux arm32 cross (GCC)
-      arch: arm64
-      env:
-       - TARGET="cross-arm32"
 
 install:
   - ./src/scripts/ci/setup_travis.sh
