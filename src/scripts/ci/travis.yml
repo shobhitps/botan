@@ -5,7 +5,7 @@ compiler: gcc
 
 jobs:
   include:
-    - name: Linux arm64 (GCC)
+    - name: Linux amd64 (GCC)
       arch: amd64
       env:
        - TARGET="shared"
