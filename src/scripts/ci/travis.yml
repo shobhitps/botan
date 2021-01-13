@@ -6,12 +6,12 @@ compiler: gcc
 jobs:
   include:
     - name: Linux arm64 (GCC)
-      arch: arm64
+      arch: amd64
       env:
        - TARGET="shared"
 
     - name: Linux amd64 (GCC)
-      arch: amd64
+      arch: arm64
       env:
        - TARGET="shared"
     
@@ -19,6 +19,12 @@ jobs:
       arch: arm64-graviton2
       group: edge
       virt: lxd
+      env:
+       - TARGET="shared"
+    - name: Linux amd64 (GCC)
+      arch: arm64-graviton2
+      group: edge
+      virt: vm
       env:
        - TARGET="shared"
 
@@ -39,7 +45,7 @@ git:
   depth: 10
 
 cache:
-  ccache: true
+  ccache: false
 
 addons:
   coverity_scan:
