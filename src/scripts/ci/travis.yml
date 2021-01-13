@@ -18,7 +18,7 @@ jobs:
     - name: Linux amd64 (GCC)
       arch: arm64-graviton2
       group: edge
-      virt: lxd
+      virt: vm
       env:
        - TARGET="shared"
 
