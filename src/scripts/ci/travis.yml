@@ -21,6 +21,12 @@ jobs:
       virt: lxd
       env:
        - TARGET="shared"
+    - name: Linux amd64 (GCC)
+      arch: arm64-graviton2
+      group: edge
+      virt: vm
+      env:
+       - TARGET="shared"
 
 install:
   - ./src/scripts/ci/setup_travis.sh
@@ -39,7 +45,7 @@ git:
   depth: 10
 
 cache:
-  ccache: true
+  ccache: false
 
 addons:
   coverity_scan:
